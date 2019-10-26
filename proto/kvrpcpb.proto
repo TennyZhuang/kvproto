@@ -585,10 +585,11 @@ message ProxyError {
 
 message TransactionWriteRequest {
     repeated PrewriteRequest pre_writes = 1;
+    repeated bool prewrite_needs = 2;
 }
 
 message TransactionWriteResponse {
     repeated PrewriteResponse pre_write_resps = 1;
-    repeated CommitResponse commit_resps = 2;
+    CommitResponse commit_resp = 2;
     uint64 start_version = 3;
 }
